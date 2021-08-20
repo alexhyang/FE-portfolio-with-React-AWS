@@ -1,11 +1,15 @@
-import React from 'react';
-import Chapter from './Chapter'
+import React from "react";
+import Chapter from "./Chapter";
 
-export default function Sidebar(props){
-    return (
-        <div className='side'>
-            <Chapter chapter='1' />
-            <Chapter chapter='2' />
-        </div>
-    );
+export default function Sidebar(props) {
+  const chapterList = props.chapterList.map((chapter) => (
+    <Chapter
+      key={chapter.chapter}
+      chapter={chapter.chapter}
+      url={chapter.imageUrl}
+      onClick={props.updateUrl}
+    />
+  ));
+
+  return <div className="side">{chapterList}</div>;
 }
