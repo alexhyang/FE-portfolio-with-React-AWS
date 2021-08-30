@@ -1,23 +1,17 @@
-import React, { useState } from "react";
-import "./App.css";
-import Sidebar from "./components/Sidebar";
+import React from "react";
+import Side from "./components/Side";
 import Main from "./components/Main";
+import "./App.css";
 
-import { chapterCoverRev as chapterList } from "./data";
-
-function App() {
-  const [currentUrl, setUrl] = useState(chapterList[0].imageUrl);
-
-  function updateUrl(url) {
-    setUrl(url);
+class App extends React.Component {
+  render() {
+    return (
+      <div className='App'>
+        <Side />
+        <Main />
+      </div>
+    );
   }
-
-  return (
-    <div className="App">
-      <Sidebar updateUrl={updateUrl} chapterList={chapterList} />
-      <Main imageUrl={currentUrl} />
-    </div>
-  );
 }
 
 export default App;

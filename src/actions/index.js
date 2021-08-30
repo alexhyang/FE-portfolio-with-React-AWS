@@ -11,16 +11,17 @@ export const firstPage = () => ({
   type: FIRST_PAGE,
 });
 
-export const lastPage = () => ({
-  type: LAST_PAGE,
-});
-
 export const previousPage = () => ({
   type: PREVIOUS_PAGE,
 });
 
 export const nextPage = () => ({
   type: NEXT_PAGE,
+});
+
+export const lastPage = (payload) => ({
+  type: LAST_PAGE,
+  payload
 });
 
 export const updateChapter = (payload) => ({
